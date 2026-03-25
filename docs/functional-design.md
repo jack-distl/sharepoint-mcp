@@ -81,7 +81,8 @@ All tools follow the same pattern:
 | `create_list_item` | `POST /sites/{id}/lists/{listId}/items` |
 | `update_list_item` | `PATCH /sites/{id}/lists/{listId}/items/{itemId}` |
 | `create_advanced_document_library` | `POST /sites/{id}/drives` |
-| `upload_document` | `PUT /sites/{id}/drives/{driveId}/root:/{path}/{file}:/content` |
+| `download_file` | `GET /sites/{id}/drives/{driveId}/items/{itemId}/content` |
+| `upload_document` | `PUT /sites/{id}/drives/{driveId}/root:/{path}/{file}:/content` (base64 input) |
 | `create_modern_page` | `POST /sites/{id}/pages` |
 | `create_news_post` | `POST /sites/{id}/pages` (news template) |
 | `get_document_content` | `GET /sites/{id}/drives/{driveId}/items/{itemId}/content` |

@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **`upload_document` now accepts base64-encoded content** (`tools/write_tools.py`): Changed
+  `file_content` parameter from `bytes` to `str` (base64-encoded) so file uploads work
+  correctly through JSON-serialized MCP tool calls. Includes explicit error handling for
+  invalid base64 input.
+- **Removed transport security bypass** (`server.py`): Removed monkey-patch
+  (`_ts._check_host = lambda`) that defeated `TransportSecuritySettings`, and removed
+  hardcoded Railway production URL.
+- **Restored stdio transport support** (`server.py`): Restored `main()` entry point with
+  `MCP_TRANSPORT`-based transport selection (stdio/sse/streamable-http), fixing
+  compatibility with Claude Desktop and other stdio clients.
+- **Consolidated imports** (`server.py`): Moved all imports to the top of the file per PEP 8.
+
+### Added
+
+- **`download_file` tool** (`tools/read_tools.py`): New tool that downloads a file from
+  SharePoint and returns its content as base64, enabling a download → edit → re-upload
+  workflow when paired with `upload_document`.
+
 ### Refactored
 
 - **Split `utils/graph_client.py` into mixin modules**: The 1,350-line monolithic class has

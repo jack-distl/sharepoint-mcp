@@ -162,7 +162,8 @@ The following MCP tools are exposed to the LLM:
 | `get_document_by_path` | Retrieve document content by file path |
 | `get_item_metadata` | Get metadata for a file or folder |
 | `search_sharepoint` | Full-text search across all content in the site |
-| `upload_document` | Upload a file to a document library |
+| `download_file` | Download a file and return its content as base64 |
+| `upload_document` | Upload a file to a document library (accepts base64-encoded content) |
 | `create_list_item` | Create a new item in a SharePoint list |
 | `update_list_item` | Update an existing item in a SharePoint list |
 | `create_intelligent_list` | Provision a list with an AI-optimized schema |

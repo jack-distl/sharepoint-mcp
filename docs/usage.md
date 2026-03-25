@@ -55,7 +55,8 @@ This guide explains how to use the SharePoint MCP Server with Claude and other L
 
 | Tool | Parameters | Description |
 |------|-----------|-------------|
-| `upload_document` | `site_id`, `drive_id`, `folder_path`, `filename`, `content` | Upload a file to a document library |
+| `download_file` | `site_id`, `drive_id`, `item_id`, `filename` | Download a file and return its content as base64 |
+| `upload_document` | `site_id`, `drive_id`, `folder_path`, `file_name`, `file_content` (base64), `content_type` | Upload a file to a document library |
 | `create_list_item` | `site_id`, `list_id`, `fields` | Create a new item in a list |
 | `update_list_item` | `site_id`, `list_id`, `item_id`, `fields` | Update an existing list item |
 
